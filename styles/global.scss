@@ -1,1 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 /* Global styles */
+:root{
+    --primary-bg : #222222;
+    --sec-bg : #913fe2;
+    --tertier-bg : #6f2598;
+    --font : 'Noto Sans', sans-serif;
+
+    --nav-hover : #6f2598;
+
+    --text-light: #ffffff;
+    --text-dark : #121212;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: calc(.625 * 16px);
+}
+
+body{
+    max-width: 100vw;
+    overflow-x: hidden;
+    background-color: var(--primary-bg);
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text-light);
+    font-family: var(--font);
+}
+
+input,
+button{
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+input[type="search"]{
+    font-family: var(--font);
+    font-size: 1.6rem;
+    color: var(--text-light);
+    -webkit-appearance: none; /* Remove search button in Safari */
+    -moz-appearance: textfield; /* Remove search button in Firefox */
+    appearance: none; /* Standard syntax */
+
+    &::-webkit-search-cancel-button{
+        display: none;
+    }
+
+    &::-webkit-search-decoration{
+        display: none;
+    }
+
+    &::placeholder{
+        color: #999999;
+    }
+}
+
+.wrapper{
+    width: 100%;
+    min-height: 100dvh;
+    overflow-x: hidden;
+}
