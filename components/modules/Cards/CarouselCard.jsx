@@ -1,9 +1,9 @@
 import { CardEl } from '@/components/elements/CardEl';
 import { SeriesEl } from '@/components/elements/SeriesEl';
 import { StarReview } from '@/components/elements/StarReview';
-import Cover from '@/public/asset/cover/cover-1.webp';
 import styles from '@/styles/components/modules/Cards/cards.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 
 /**
  * Card for carousel slides
@@ -11,36 +11,72 @@ import Image from 'next/image';
 const CarouselCard = (
     {series = {cover : '', rating : '', title : '', type : ''}}
 ) => {
-    console.log(series);
+    const {
+        title,
+        titleSlug,
+        type,
+        genre,
+        author,
+        status,
+        rating,
+        synopsis,
+        coverURL
+    } = series;
 
     return(
         <>
             <section className={styles['card-carousel-container']}>
                 <section className={styles['card-carousel__bg']}>
-                    <Image src={Cover} alt='cover' />
+                    <Image src={coverURL} alt={titleSlug} width={32} height={32}/>
                 </section>
                 <section className={styles['card-carousel']}>
                     <article className={styles['card-carousel__left']}>
                         <CardEl.CardHead>
-                            <StarReview.SingleStarReview />
+                            <StarReview.SingleStarReview
+                                ratings={rating}
+                            />
                             <section className={styles['card-carousel__title']}>
                                 <SeriesEl.SeriesTitle
-                                    title={'Solo Leveling: Ragnarok'}
-                                    href={'/series/solo-leveling-ragnarok'}
+                                    title={title}
+                                    href={`/series/${titleSlug}`}
                                     size={'seriesEl__title--lg'}
                                 />
                                 <SeriesEl.SeriesType
-                                    type={'manhwa'}
+                                    type={type}
                                     size={'seriesEl__type--lg'}
                                 />
                             </section>
                         </CardEl.CardHead>
                         <CardEl.CardTag>
-                            
+                            {genre.map((genre, index) => (
+                                <SeriesEl.SeriesGenre 
+                                    key={`genre-${index}`}
+                                    href={`/genres/${genre}`}
+                                    type={'plain-text'}
+                                    genre={genre}
+                                />
+                            ))}
                         </CardEl.CardTag>
+                        <CardEl.CardBody>
+                            <SeriesEl.SeriesSynopsis
+                                synopsis={synopsis}
+                            />
+                            <SeriesEl.SeriesStatus
+                                status={status}
+                            />
+                            <SeriesEl.SeriesAuthor
+                                author={author}
+                            />
+                        </CardEl.CardBody>
                     </article>
                     <section className={styles['card-carousel__right']}>
-                        
+                        <Link
+                            href={`/series/${titleSlug}`}
+                        >                        
+                            <figure className={styles['card-carousel__cover']}>
+                                <Image src={coverURL} alt={titleSlug} width={150} height={180} />
+                            </figure>
+                        </Link>
                     </section>
                 </section>
             </section>

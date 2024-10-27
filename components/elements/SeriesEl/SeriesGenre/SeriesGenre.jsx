@@ -7,13 +7,14 @@ import styles from '@/styles/components/elements/seriesEl.module.scss';
  * @prop string 'genre' Series genre from series data
  * @prop URL 'href' Genre route to genres archive
  */
-const SeriesGenre = ({genre, href}) => {
+const SeriesGenre = ({genre, href, type}) => {
     return(
         <>
             <Link
                 href={href}
+                className={`${styles['seriesEl__genre']} ${styles[`seriesEl__genre--${type}`]}`}
             >
-                {genre},
+                {genre}
             </Link>
         </>
     )
