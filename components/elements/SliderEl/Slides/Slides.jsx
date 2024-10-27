@@ -1,10 +1,16 @@
+import styles from '@/styles/components/elements/sliderEl.module.scss';
+
 /**
  * Slider individual slides wrapper
  * 
- * @prop string 'id' Slides individual to used as a target by bullet control
+ * @prop React.ReactDOM 'children' React DOM element
  */
-const Slides = ({id}) => {
-
+const Slides = ({children}) => {
+    return(
+        <section className={styles['sliderEl__slides']}>
+            {children}
+        </section>
+    )
 }
 
 export default Slides;

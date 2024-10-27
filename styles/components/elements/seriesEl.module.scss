@@ -1,0 +1,31 @@
+.seriesEl__title{
+    font-family: var(--font);
+    color: var(--text-light);
+    transition: color linear .5s;
+
+    &.seriesEl__title--lg{
+        width: fit-content;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        font-size: 2.1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        
+        &:hover{
+            color: #f1e05a;
+        }
+    }
+}
+
+.seriesEl__type{
+    font-family: var(--font);
+
+    &.seriesEl__type--lg{
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: #f1e05a;
+        text-transform: uppercase;
+    }
+}

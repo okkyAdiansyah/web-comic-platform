@@ -1,7 +1,8 @@
-import '@/styles/global.scss';
+import Header from '@/components/blocks/Header/Header';
+import '../styles/global.scss';
 
 /**
- * @const {metadata} metadata Site main metadata for SEO
+ * @var {metadata} metadata Site main metadata for SEO
  */
 export const metadata = {
     title: "Web Comic Platform",
@@ -9,11 +10,16 @@ export const metadata = {
 }
 
 const RootLayout = ({children}) => {
-    <html lang="en">
-        <body>
-            {children}
-        </body>
-    </html>
+    return(
+        <html>
+            <body>
+                <div className='wrapper'>
+                    <Header />
+                    {children}
+                </div>
+            </body>
+        </html>
+    )
 }
 
 export default RootLayout;
