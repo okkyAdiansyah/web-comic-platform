@@ -10,7 +10,7 @@
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 
     img{
         width: 100%;
@@ -48,4 +48,59 @@
 .card-carousel__cover{
     padding-left: 1rem;
     object-fit: contain;
+}
+
+.popular-single{
+    width: 100%;
+    height: 28rem;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+
+    .popular-single__bg{
+        width: 100%;
+        height: 100%;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .popular-single__content-overlay{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #000000, $alpha: .7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .popular-single__crown{
+            transform: rotateZ(20deg) translateX(20px);
+        }
+
+        .popular-single__head{
+            margin-top: .4rem;
+
+            strong{
+                font-family: var(--font);
+                font-size: 2.4rem;
+                text-align: center;
+            }
+            p{
+                font-family: var(--font);
+                font-size: 1.6rem;
+                text-align: center;
+            }
+        }
+        .popular-single__series-title{
+            margin-top: .8rem;
+            font-family: var(--font);
+            font-size: 1.6rem;
+            text-align: center;
+        }
+    }
 }

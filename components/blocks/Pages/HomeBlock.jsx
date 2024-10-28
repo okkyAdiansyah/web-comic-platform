@@ -1,14 +1,18 @@
 import styles from '@/styles/components/blocks/page.module.scss';
 import Carousel from '../Carousel/Carousel';
 import { GetFeaturedPosts } from '@/action/actions';
+import Leaderboard from '../Leaderboard/Leaderboard';
+import { Cards } from '@/components/modules/Cards';
+import { getWeeklyLeaderboard } from '@/services/leaderboardService';
 
 /**
  * Home layout block
  */
 const HomeBlock = async () => {
     const featuredSeriesData = GetFeaturedPosts();
+    const weeklyLeaderboardData = getWeeklyLeaderboard();
     
-    const [featuredSeries] = await Promise.all([featuredSeriesData]);
+    const [featuredSeries, weeklyLeaderboard] = await Promise.all([featuredSeriesData, weeklyLeaderboardData]);
 
     return(
         <section className={`${styles['page-block']} ${styles['page-home']}`}>
@@ -16,6 +20,9 @@ const HomeBlock = async () => {
                 <section className={styles['home-banner']}>
                     <Carousel 
                         seriesData={featuredSeries} 
+                    />
+                    <Cards.PopularSingleCard 
+                        seriesData={weeklyLeaderboard[0]}
                     />
                 </section>
                 <section className={styles['home-popular']}>
@@ -25,7 +32,9 @@ const HomeBlock = async () => {
                     
                 </section>
             </section>
-            <aside className={styles['page-home-aside']}></aside>
+            <aside className={styles['page-home-aside']}>
+                <Leaderboard />
+            </aside>
         </section>
     )
 }
