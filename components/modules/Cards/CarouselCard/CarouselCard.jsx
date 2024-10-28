@@ -27,7 +27,7 @@ const CarouselCard = (
         <>
             <section className={styles['card-carousel-container']}>
                 <section className={styles['card-carousel__bg']}>
-                    <Image src={coverURL} alt={titleSlug} width={32} height={32}/>
+                    <Image src={coverURL} alt={titleSlug} width={320} height={280}/>
                 </section>
                 <section className={styles['card-carousel']}>
                     <article className={styles['card-carousel__left']}>
