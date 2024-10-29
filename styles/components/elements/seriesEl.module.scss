@@ -17,6 +17,19 @@
             color: #f1e05a;
         }
     }
+    &.seriesEl__title--sm{
+        width: 18rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+        font-size: 1.2rem;
+        font-weight: 500;
+        
+        &:hover{
+            color: var(--nav-hover);
+        }
+    }
 }
 
 .seriesEl__type{
@@ -36,6 +49,21 @@
 
     &.seriesEl__genre--plain-text{
         font-size: 1.3rem;
+        text-transform: capitalize;
+
+        &:hover{
+            color: var(--sec-bg);
+        }
+
+        &:not(:last-child){
+            &::after{
+                content: ',';
+                font: inherit;
+            }
+        }
+    }
+    &.seriesEl__genre--plain-text--sm{
+        font-size: 1.1rem;
         text-transform: capitalize;
 
         &:hover{

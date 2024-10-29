@@ -1,5 +1,5 @@
-import TrendingCard from "./TrendingCard/TrendingCard";
+import RankCard from "./RankCard/RankCard";
 import CarouselCard from "./CarouselCard/CarouselCard";
 import PopularSingleCard from "./PopularSingleCard/PopularSingleCard";
 
-export const Cards = {TrendingCard, CarouselCard, PopularSingleCard};
+export const Cards = {RankCard, CarouselCard, PopularSingleCard};

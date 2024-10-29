@@ -39,7 +39,7 @@ const CarouselCard = (
                                 <SeriesEl.SeriesTitle
                                     title={title}
                                     href={`/series/${titleSlug}`}
-                                    size={'seriesEl__title--lg'}
+                                    size={'lg'}
                                 />
                                 <SeriesEl.SeriesType
                                     type={type}
