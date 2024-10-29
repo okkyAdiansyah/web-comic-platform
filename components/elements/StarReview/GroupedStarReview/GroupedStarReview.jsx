@@ -5,7 +5,9 @@
  * @prop string 'size' Star review size
  */
 const GroupedStarReview = ({review, size}) => {
-
+    return(
+        <></>
+    )
 }
 
 export default GroupedStarReview;

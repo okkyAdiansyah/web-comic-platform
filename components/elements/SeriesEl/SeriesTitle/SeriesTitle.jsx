@@ -12,7 +12,7 @@ const SeriesTitle = ({title, href, size}) => {
     return(
         <Link
             href={href}
-            className={`${styles['seriesEl__title']} ${styles[size]}`}
+            className={`${styles['seriesEl__title']} ${styles[`seriesEl__title--${size}`]}`}
         >
             {title}
         </Link>

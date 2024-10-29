@@ -3,7 +3,7 @@ import Carousel from '../Carousel/Carousel';
 import { GetFeaturedPosts } from '@/action/actions';
 import Leaderboard from '../Leaderboard/Leaderboard';
 import { Cards } from '@/components/modules/Cards';
-import { getWeeklyLeaderboard } from '@/services/leaderboardService';
+import { getWeeklyLeaderboard } from '@/services/LeaderboardService';
 
 /**
  * Home layout block

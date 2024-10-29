@@ -1,0 +1,24 @@
+.tab-control-wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-inline: 1rem;
+    padding-top: 1rem;
+}
+
+.tab-control-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .4rem .6rem;
+    background: #333333;
+    border-radius: .4rem;
+}
+
+.rank-board-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
